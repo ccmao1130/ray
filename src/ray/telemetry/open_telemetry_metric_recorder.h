@@ -116,7 +116,7 @@ class OpenTelemetryMetricRecorder {
   // the recorder will only shutdown once.
   std::atomic<bool> is_shutdown_{false};
   // The name of the meter used for this recorder.
-  const std::string meter_name_ = "ray";
+  static constexpr std::string_view meter_name_ = "ray";
 
   void SetObservableMetricValue(const std::string &name,
                                 absl::flat_hash_map<std::string, std::string> &&tags,
