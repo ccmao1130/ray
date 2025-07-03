@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+<<<<<<< HEAD
 from pathlib import Path
 from typing import Dict, List, Optional
 from depset import DepSet
@@ -48,12 +49,15 @@ class DependencySetManager:
         if status.returncode != 0:
             raise Exception(f"Failed to execute command: {cmd}")
         return status.stdout
+=======
+>>>>>>> elliot-barn/depsets-v1.0
 
 
 @click.group(name="depsets")
 @click.pass_context
 def cli(ctx):
     """Manage Python dependency sets."""
+<<<<<<< HEAD
     # Store flags in context for subcommands
     ctx.ensure_object(dict)
 
@@ -175,6 +179,9 @@ def expand(
     except ValueError as e:
         click.echo(f"Error: {str(e)}", err=True)
 
+=======
+    pass
+>>>>>>> elliot-barn/depsets-v1.0
 
 if __name__ == "__main__":
     cli()
