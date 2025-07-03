@@ -12,7 +12,6 @@ class Depset:
     constraints: List[str]
     degree: Optional[int] = None
     output: Optional[str] = None
-    flags: Optional[List[str]] = field(default_factory=list)
     depset: Optional[List[str]] = field(default_factory=list)
     packages: Optional[List[str]] = field(default_factory=list)
     depsets: Optional[List[str]] = field(default_factory=list)
@@ -39,7 +38,6 @@ class Config:
                 ],
                 operation=values.get("operation", "compile"),
                 output=os.path.join(current_directory, values.get("output")),
-                flags=values.get("flags", []),
                 depset=values.get("depset", []),
                 packages=values.get("packages", []),
                 depsets=values.get("depsets", []),
